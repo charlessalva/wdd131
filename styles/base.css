@@ -1,119 +1,63 @@
 /* General Styles */
 body {
-    background-color: #121212;
-    color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Header */
+/* Header Styles */
 header {
-    background-color: black;
-    padding: 1rem;
+    background-color: #333;
+    color: white;
+    padding: 20px;
     text-align: center;
 }
 
-h1 {
-    margin: 0;
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    /* Increased spacing between nav links */
-    margin-top: 0.5rem;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    /* Added padding */
-    border-radius: 5px;
-    transition: background 0.3s ease;
 }
 
+/* Fix: Hover pseudo-class issue */
 nav a:hover {
-    background: #4da6ff;
-    /* Highlight effect */
+    background-color: #4da6ff;
     color: black;
+    text-decoration: underline;
 }
 
-/* Main Layout */
+/* Main Content */
 main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    /* About Me 2/3, Web Dev 1/3 */
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1100px;
+    max-width: 90%;
+    /* Fix: Flexible width */
     margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Styling */
-.card {
-    background-color: #1e1e1e;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    text-align: left;
-}
-
-/* Headings */
-.card h2 {
-    color: #ddd;
-    background-color: #337ab7;
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-}
-
-/* Image & Text Wrapping */
-.card-content {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-/* Images */
-.card img {
-    max-width: 140px;
-    /* Slightly increased image size */
+/* Image Optimization */
+img {
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
-}
-
-/* Web Dev Resources */
-.card ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.card ul li {
-    margin: 0.5rem 0;
-}
-
-.card ul a {
-    color: #4da6ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.card ul a:hover {
-    color: #ffcc00;
-    /* Different hover color for contrast */
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: black;
+    padding: 10px;
+    background-color: #333;
+    color: white;
 }
