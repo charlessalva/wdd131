@@ -54,14 +54,6 @@ main {
     margin: auto;
 }
 
-/* Divider Line */
-.divider {
-    border-top: 2px solid #4da6ff;
-    /* Light blue to match theme */
-    margin: 1.5rem 0;
-    opacity: 0.7;
-}
-
 /* Card Styling */
 .card {
     background-color: #1e1e1e;
