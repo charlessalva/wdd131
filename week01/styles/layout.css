@@ -1,0 +1,61 @@
+/* Apply CSS Grid to the body */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Use Flexbox for Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Styling for Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Use CSS Grid for Main Content */
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Section and Sidebar Styling */
+section,
+aside {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+aside {
+    background-color: #ddd;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
