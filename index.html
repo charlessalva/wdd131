@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Charles Nephi Salva">
     <meta name="description"
-        content="Personal webpage for WDD 131: Dynamic Web Fundamentals, featuring information about Charles Nephi Salva, Pasig City, and useful web development resources.">
-
+        content="WDD 131: Dynamic Web Fundamentals - Charles Nephi Salva. Learn about Charles, his city, and useful web development resources.">
+    <meta name="author" content="Charles Nephi Salva">
     <title>WDD 131: Dynamic Web Fundamentals - Charles Nephi Salva</title>
     <link rel="stylesheet" href="/styles/base.css">
 </head>
@@ -37,7 +36,10 @@
                     develop meaningful
                     software that could help me get to the life I envision for me and my family.</p>
             </div>
-            <div class="divider"></div>
+
+            <!-- Divider for separation -->
+            <hr class="divider">
+
             <div class="card-content">
                 <p>Pasig City is located in Metro Manila, Philippines. It’s known for being a business hub, especially
                     with the Ortigas
@@ -70,6 +72,7 @@
         <p id="last-modified"></p>
     </footer>
 
+    <!-- JavaScript at the end of the body -->
     <script>
         document.getElementById("last-modified").textContent =
             "Last Modified: " + document.lastModified;
