@@ -1,0 +1,27 @@
+/* Large Screen Styles */
+@media (min-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
