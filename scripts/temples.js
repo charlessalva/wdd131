@@ -4,14 +4,10 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Hamburger Menu Toggle
 const menuToggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
+const menu = document.querySelector("nav");
 
 menuToggle.addEventListener("click", () => {
-    if (menu.style.display === "flex") {
-        menu.style.display = "none";
-        menuToggle.textContent = "☰"; // Hamburger icon
-    } else {
-        menu.style.display = "flex";
-        menuToggle.textContent = "✖"; // Close icon
-    }
+    menu.classList.toggle("show");
+    menuToggle.textContent = menu.classList.contains("show") ? "✖" : "☰";
 });
+
