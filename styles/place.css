@@ -60,6 +60,34 @@ header {
     max-width: 300px;
 }
 
+/* Centering the h2 in the cards */
+.data h2,
+.weather h2 {
+    text-align: center;
+}
+
+/* Aligning labels and values properly */
+.data p,
+.weather p {
+    display: flex;
+    gap: 5px;
+}
+
+.data p strong,
+.weather p strong {
+    min-width: 130px;
+    /* Adjust width as needed */
+    text-align: right;
+    justify-items: right;
+}
+
+.data p span,
+.weather p span {
+    flex-grow: 0;
+    /* Ensures values align from the left */
+    text-align: left;
+}
+
 /* Adjusted Positioning for Desktop */
 .data {
     top: 20%;
@@ -72,6 +100,13 @@ header {
     right: 5%;
 }
 
+.weather-icon {
+    width: 50px;
+    height: auto;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
 /* Mobile View */
 @media screen and (max-width: 768px) {
     .hero {
@@ -82,14 +117,19 @@ header {
     .weather {
         position: static;
         width: 90%;
-        max-width: 400px; /* Consistent width */
+        max-width: 400px;
+        /* Consistent width */
         margin: 15px auto;
         padding: 20px;
         background: white;
-        border: none; /* Remove borders */
-        border-radius: 0; /* Optional: keep edges sharp */
-        box-shadow: none; /* Remove shadow */
-        text-align: center; /* Center align text */
+        border: none;
+        /* Remove borders */
+        border-radius: 0;
+        /* Optional: keep edges sharp */
+        box-shadow: none;
+        /* Remove shadow */
+        text-align: left;
+        /* Keep text left-aligned */
     }
 
     .data h2,
@@ -104,11 +144,16 @@ header {
         font-size: 1em;
         line-height: 1.6;
         margin: 5px 0;
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px;
     }
 
     .data p strong,
     .weather p strong {
-        font-weight: bold;
+        min-width: 130px;
+        text-align: right;
+        margin-left: 4rem;
     }
 
     /* Add spacing between sections */
@@ -120,11 +165,11 @@ header {
     .weather-icon {
         display: block;
         margin: 10px auto;
-        width: 50px; /* Adjust size as needed */
+        width: 50px;
+        /* Adjust size as needed */
         height: auto;
     }
 }
-
 
 /* Footer */
 footer {
