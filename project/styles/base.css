@@ -12,9 +12,36 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-light);
+}
+
+.hero {
+  width: 100%;
+  padding: 2rem;
+  justify-items: center;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* Container for side-by-side sections */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  /* spacing between columns */
+  padding: 2rem;
+}
+
+/* Optional styling for each column */
+.column {
+  background-color: #2a2a2a;
+  /* example */
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
 }
 
 /* Header */
@@ -118,12 +145,11 @@ main ul li {
   margin-bottom: 0.5rem;
 }
 
-img {
+.profile img {
   width: 100%;
-  max-width: 400px;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  max-height: 400px;
 }
 
 /* Appliance Cards */
@@ -180,12 +206,11 @@ aside {
 }
 
 /* Banner */
-.banner img {
+.hero img {
   width: 100%;
   height: auto;
   object-fit: cover;
   max-height: 400px;
-  filter: brightness(60%);
 }
 
 /* Contact Form */
@@ -276,6 +301,25 @@ aside {
 
 .faq p {
   margin-top: 0.5rem;
+}
+
+section ul li a {
+  color: #4eb3ff;
+  /* light sky blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+section ul li a:hover,
+section ul li a:focus {
+  color: #90dfff;
+  /* lighter blue on hover */
+  text-decoration: underline;
+}
+
+section ul li a:visited {
+  color: #a4d1ff;
+  /* slightly muted blue for visited links */
 }
 
 /* Scroll to Top */

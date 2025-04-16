@@ -127,3 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const feedbackForm = document.getElementById("feedbackForm");
+    const feedbackStatus = document.getElementById("feedbackStatus");
+
+    if (feedbackForm) {
+        feedbackForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            feedbackStatus.textContent = "Thank you for your feedback!";
+            feedbackStatus.style.color = "lightgreen";
+            feedbackForm.reset();
+        });
+    }
+});
