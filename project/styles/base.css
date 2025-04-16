@@ -1,22 +1,13 @@
 :root {
-  --primary-color: #0077d9;
-  /* Blue for primary actions and accents */
+  --primary-color: #0056a3;
   --primary-hover: #0055aa;
-  /* Darker blue for hover states */
   --dark-bg: #121212;
-  /* Dark background for the page */
   --card-bg: #2a2a2a;
-  /* Dark background for cards and sections */
   --light-bg: #ffffff;
-  /* White background for forms and important elements */
   --text-light: #f5f5f5;
-  /* Light text color */
-  --text-muted: #bbbbbb;
-  /* Muted text for less important content */
+  --text-muted: #e0e0e0;
   --border-radius: 1rem;
-  /* Rounded corners for elements */
   --max-width: 1200px;
-  /* Max width for layout */
 }
 
 body {
