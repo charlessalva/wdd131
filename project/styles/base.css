@@ -83,7 +83,7 @@ nav li a:hover {
 
 nav a.active {
   background-color: var(--light-bg);
-  color: var(--primary-color);
+  color: var(--primary-hover);
 }
 
 main section {
