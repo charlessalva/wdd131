@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.classList.add('appliance-card');
             card.innerHTML = `
-                <img src="${appliance.image}" alt="${appliance.name}">
+                <img src="${appliance.image}" alt="${appliance.name} loading="lazy"">
                 <h4>${appliance.name}</h4>
                 <p><strong>Type:</strong> ${appliance.type}</p>
                 <p>${appliance.features}</p>
@@ -117,3 +117,31 @@ document.getElementById("last-modified").textContent = document.lastModified;
 document.getElementById("menuToggle").addEventListener("click", function () {
     document.querySelector("nav ul").classList.toggle("active");
 });
+
+// Save name to localStorage on form submit
+if (form) {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (name && email && message) {
+            // Save name
+            localStorage.setItem("visitorName", name);
+            status.textContent = `Message sent successfully!`;
+            form.reset();
+        } else {
+            status.textContent = "Please fill out all fields.";
+        }
+    });
+
+    // Show welcome message if visitorName is saved
+    const savedName = localStorage.getItem("visitorName");
+    if (savedName) {
+        const welcome = document.createElement("p");
+        welcome.textContent = `Welcome back, ${savedName}! 👋`;
+        document.querySelector("main").prepend(welcome);
+    }
+}
+

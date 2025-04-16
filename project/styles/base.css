@@ -17,10 +17,12 @@ body {
   color: var(--text-light);
 }
 
+/* Header */
 header {
   background-color: var(--primary-color);
-  padding: 1rem 0;
+  padding: 1rem;
   text-align: center;
+  position: relative;
 }
 
 header h1 {
@@ -29,10 +31,23 @@ header h1 {
   color: var(--text-light);
 }
 
+/* Hamburger Menu */
+#menuToggle {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-light);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Navigation */
 nav {
   background-color: var(--primary-color);
-  color: var(--text-light);
-  padding: 1rem;
 }
 
 nav ul {
@@ -40,30 +55,9 @@ nav ul {
   justify-content: center;
   gap: 1rem;
   list-style: none;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    display: none;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+  transition: all 0.3s ease;
 }
 
 nav li a {
@@ -86,6 +80,24 @@ nav a.active {
   color: var(--primary-hover);
 }
 
+/* Responsive Nav */
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+    
+}
+
+/* Main & Sections */
 main section {
   padding: 1rem;
   background-color: #1f1f1f;
@@ -114,30 +126,7 @@ img {
   border-radius: 8px;
 }
 
-/* Sidebar */
-aside {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Featured Section */
-.featured {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.featured h2 {
-  margin-top: 0;
-  font-size: 1.4rem;
-}
-
+/* Appliance Cards */
 .appliance-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -175,32 +164,31 @@ aside {
   font-size: 0.9rem;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #111;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+/* Featured / Sidebar / Cards */
+.featured,
+aside {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .featured h2 {
-    font-size: 1.2rem;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-  }
+.featured h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
 }
 
-/* Contact Form Styles */
+/* Banner */
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 400px;
+  filter: brightness(60%);
+}
+
+/* Contact Form */
 .contact-form {
   background-color: var(--light-bg);
   padding: 2rem;
@@ -255,49 +243,13 @@ footer {
   background-color: var(--primary-hover);
 }
 
-.contact-form p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.contact-form ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.contact-form ul li {
-  margin-bottom: 1rem;
-}
-
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-  .contact-form {
-    padding: 1.5rem;
-    margin: 1rem;
-  }
-
-  .contact-form h3 {
-    font-size: 1.6rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 0.95rem;
-  }
-
-  .contact-form button {
-    font-size: 0.95rem;
-    padding: 0.65rem 1.2rem;
-  }
-}
-
+/* Contact Info & FAQ */
 .contact-info,
-.contact-form,
 .faq {
-  margin-bottom: 2rem;
+  background-color: #1e1e1e;
   padding: 1rem;
   border-radius: 8px;
-  background-color: #1e1e1e;
+  margin-bottom: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -326,14 +278,7 @@ footer {
   margin-top: 0.5rem;
 }
 
-.banner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-height: 400px;
-  filter: brightness(60%);
-}
-
+/* Scroll to Top */
 #scrollToTop {
   position: fixed;
   bottom: 1.5rem;
@@ -351,4 +296,13 @@ footer {
 
 #scrollToTop.show {
   display: block;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }

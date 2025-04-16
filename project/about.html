@@ -13,8 +13,8 @@
 <body>
     <header>
         <h1>ApplianceSmart</h1>
+        <button id="menuToggle" aria-label="Menu">&#9776;</button>
         <nav>
-            <div class="menu-toggle" id="menuToggle">☰</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
@@ -26,7 +26,7 @@
 
     <main>
         <section class="banner">
-            <img src="images/about-banner.jpg" alt="Modern Filipino home with appliances">
+            <img src="images/about-banner.jpg" alt="Modern Filipino home with appliances" loading="lazy"> 
             <div class="banner-text">
                 <h2>Smart Choices Start Here</h2>
                 <p>Helping you choose the right appliances for your home and lifestyle.</p>
@@ -70,7 +70,7 @@
     
         <section>
             <h3>Meet the Creator</h3>
-            <img src="images/profile.jpg" alt="Profile picture of Charles Nephi Salva" id="profile">
+            <img src="images/profile.jpg" alt="Profile picture of Charles Nephi Salva" id="profile" loading="lazy">
             <p>Hi! I'm Charles Nephi Salva, the creator of ApplianceSmart. I'm a web development student and tech enthusiast
                 based in Pasig City. This website is part of my journey to help others while honing my skills in design,
                 usability, and accessibility.</p>
@@ -83,7 +83,7 @@
     </footer>
 
     <button id="scrollToTop" title="Back to top">↑</button>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
 </body>
 
 </html>
