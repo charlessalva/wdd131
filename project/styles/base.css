@@ -1,0 +1,363 @@
+:root {
+  --primary-color: #0077d9;
+  /* Blue for primary actions and accents */
+  --primary-hover: #0055aa;
+  /* Darker blue for hover states */
+  --dark-bg: #121212;
+  /* Dark background for the page */
+  --card-bg: #2a2a2a;
+  /* Dark background for cards and sections */
+  --light-bg: #ffffff;
+  /* White background for forms and important elements */
+  --text-light: #f5f5f5;
+  /* Light text color */
+  --text-muted: #bbbbbb;
+  /* Muted text for less important content */
+  --border-radius: 1rem;
+  /* Rounded corners for elements */
+  --max-width: 1200px;
+  /* Max width for layout */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--text-light);
+}
+
+nav {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+nav li a {
+  display: block;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav li a:hover {
+  background-color: var(--light-bg);
+  color: var(--primary-color);
+}
+
+nav a.active {
+  background-color: var(--light-bg);
+  color: var(--primary-color);
+}
+
+main section {
+  padding: 1rem;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+main h3 {
+  margin-top: 1.5rem;
+  color: #4eb3ff;
+}
+
+main ul {
+  padding-left: 1.5rem;
+}
+
+main ul li {
+  margin-bottom: 0.5rem;
+}
+
+img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Sidebar */
+aside {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Featured Section */
+.featured {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featured h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.appliance-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.appliance-card {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appliance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.appliance-card img {
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.appliance-card h3 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 1rem;
+}
+
+.appliance-card p {
+  margin: 0.3rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .featured h2 {
+    font-size: 1.2rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Contact Form Styles */
+.contact-form {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+}
+
+.contact-form label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.contact-form button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--primary-hover);
+}
+
+.contact-form p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-form ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-form ul li {
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .contact-form h3 {
+    font-size: 1.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.2rem;
+  }
+}
+
+.contact-info,
+.contact-form,
+.faq {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-info li {
+  margin: 0.5rem 0;
+}
+
+.faq details {
+  background-color: #2a2a2a;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.faq summary {
+  font-weight: bold;
+}
+
+.faq p {
+  margin-top: 0.5rem;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 400px;
+  filter: brightness(60%);
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+#scrollToTop.show {
+  display: block;
+}
