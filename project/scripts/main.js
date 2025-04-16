@@ -63,85 +63,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // Render appliance cards
-    const applianceCards = document.getElementById('applianceCards');
-    if (applianceCards) {
-        appliances.forEach(appliance => {
-            const card = document.createElement('div');
-            card.classList.add('appliance-card');
-            card.innerHTML = `
-                <img src="${appliance.image}" alt="${appliance.name} loading="lazy"">
-                <h4>${appliance.name}</h4>
-                <p><strong>Type:</strong> ${appliance.type}</p>
-                <p>${appliance.features}</p>
-            `;
-            applianceCards.appendChild(card);
-        });
-    }
-
-    // Contact form validation
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("formStatus");
-
-    if (form) {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            if (name && email && message) {
-                status.textContent = "Message sent successfully!";
-                form.reset();
-            } else {
-                status.textContent = "Please fill out all fields.";
-            }
-        });
-    }
-
-    const scrollBtn = document.getElementById("scrollToTop");
-
-    window.addEventListener("scroll", () => {
-        scrollBtn.classList.toggle("show", window.scrollY > 300);
+    const applianceCards = document.getElementById("applianceCards");
+  if (applianceCards) {
+    appliances.forEach((appliance) => {
+      const card = document.createElement("article");
+      card.classList.add("appliance-card");
+      card.innerHTML = `
+        <img src="${appliance.image}" alt="${appliance.name}" loading="lazy">
+        <h4>${appliance.name}</h4>
+        <p><strong>Type:</strong> ${appliance.type}</p>
+        <p>${appliance.features}</p>
+      `;
+      applianceCards.appendChild(card);
     });
+  }
 
-    scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+  // Scroll to Top
+  const scrollBtn = document.getElementById("scrollToTop");
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("show", window.scrollY > 300);
+  });
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Update footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("last-modified").textContent = document.lastModified;
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navList = document.getElementById("navList");
+  if (menuToggle && navList) {
+    menuToggle.addEventListener("click", () => {
+      navList.classList.toggle("active");
     });
-});
+  }
 
+  // Form Handling (if form exists)
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
 
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("last-modified").textContent = document.lastModified;
-
-document.getElementById("menuToggle").addEventListener("click", function () {
-    document.querySelector("nav ul").classList.toggle("active");
-});
-
-// Save name to localStorage on form submit
-if (form) {
+  if (form) {
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
 
-        if (name && email && message) {
-            // Save name
-            localStorage.setItem("visitorName", name);
-            status.textContent = `Message sent successfully!`;
-            form.reset();
-        } else {
-            status.textContent = "Please fill out all fields.";
-        }
+      if (name && email && message) {
+        localStorage.setItem("visitorName", name);
+        status.textContent = "Message sent successfully!";
+        form.reset();
+      } else {
+        status.textContent = "Please fill out all fields.";
+      }
     });
 
-    // Show welcome message if visitorName is saved
     const savedName = localStorage.getItem("visitorName");
     if (savedName) {
-        const welcome = document.createElement("p");
-        welcome.textContent = `Welcome back, ${savedName}! 👋`;
-        document.querySelector("main").prepend(welcome);
+      const welcome = document.createElement("p");
+      welcome.textContent = `Welcome back, ${savedName}! 👋`;
+      document.querySelector("main").prepend(welcome);
     }
-}
-
+  }
+});
